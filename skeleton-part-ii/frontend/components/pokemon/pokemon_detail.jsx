@@ -23,7 +23,13 @@ class PokemonDetail extends React.Component {
 const mSTP = (state, ownProps ) => {
     const pokemonId = ownProps.match.params.pokemonId
 
-    const pokemon = state.entities.pokemon[pokemonId]
+    const pokemon = state.entities.pokemon[pokemonId] || {};
+
+    return {
+        pokemon: pokemon;
+    }
 }
+
+// const mDTP = (state, dip)
 
 export default PokemonDetail
